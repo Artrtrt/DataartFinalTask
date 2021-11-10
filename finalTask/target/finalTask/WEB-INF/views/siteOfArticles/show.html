@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Article</title>
+</head>
+<body>
+<header>
+    <h1 th:text="${article.getName()}">VALUE</h1>
+</header>
+<div class="article">
+    <p th:text="${article.getArticle()}">VALUE</p>
+</div>
+<footer>
+    <div class="links">
+        <p>Go to the home page</p>
+        <a href="/siteOfArticles">HomePage</a>
+    </div>
+</footer>
+</body>
+<style>
+    body {
+        background-color: #b6fff7;
+    }
+    .article {
+        min-height: 200px;
+        padding: 30px;
+    }
+
+    .article p {
+        font-size: large;
+    }
+    footer, header {
+        background-color: aquamarine;
+        margin: 50px;
+        padding: 20px;
+    }
+    footer {
+        margin-bottom: 0;
+    }
+    header {
+        margin-top: 0;
+    }
+
+    .links, h1 {
+        text-align: center;
+    }
+</style>
+</html>

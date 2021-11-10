@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>DownloadPage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<header>
+<h1>Article download page</h1>
+</header>
+<div class="download">
+    <p>Enter your article. The first word(before the space) will be the title of your article.</p>
+    <form th:method="POST" th:action="@{/siteOfArticles}" th:object="${article}">
+        <label for="inputArticle">Enter article: </label>
+        <input type="text" th:field="*{article}" id="inputArticle">
+        <br>
+        <input type="submit" value="create">
+    </form>
+</div>
+<footer>
+    <div class="links">
+        <p>Go to the home page</p>
+        <a href="/siteOfArticles">HomePage</a>
+    </div>
+</footer>
+</body>
+<style>
+    body {
+        background-color: #b6fff7;
+    }
+
+    footer, header {
+        background-color: aquamarine;
+        margin: 50px;
+        padding: 20px;
+    }
+    footer {
+        margin-bottom: 0;
+    }
+    header {
+        margin-top: 0;
+    }
+    .download {
+        padding: 30px;
+    }
+    .links, h1 {
+        text-align: center;
+    }
+</style>
+</html>

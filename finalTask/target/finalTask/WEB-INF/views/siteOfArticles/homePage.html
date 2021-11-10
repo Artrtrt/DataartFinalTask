@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<header>
+    <h1>Website of articles by Tihonov Artem</h1>
+</header>
+<div class="articles">
+    <h2>List of Articles:</h2>
+<div class ="article" th:each="article : ${articles}">
+    <a th:href="@{/siteOfArticles/{id}(id=${article.getId()})}" th:text="${article.getName()}">Article</a>
+</div>
+</div>
+<footer id="footer">
+    <div class="links">
+        <p class>Upload articles here</p>
+        <a href="/siteOfArticles/downloadPage">DownloadPage</a>
+    </div>
+</footer>
+</body>
+<style>
+    body {
+        background-color: #b6fff7;
+    }
+    footer, header {
+        background-color: aquamarine;
+        margin: 50px;
+        padding: 20px;
+    }
+    footer {
+        margin-bottom: 0;
+    }
+    header {
+        margin-top: 0;
+    }
+    .articles {
+        padding: 30px;
+        min-height: 200px;
+    }
+    .article{
+        padding: 7px;
+        font-size: large;
+    }
+    .links, h1 {
+        text-align: center;
+    }
+</style>
+</html>
